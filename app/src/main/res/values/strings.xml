@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">FitHub</string>
+    <string name="login">صفحه ورود</string>
+    <string name="register">صفحه عضویت</string>
+    <string name="sign_up">ثبت نام</string>
+    <string name="sign_in">ورود</string>
+    <string name="username">نام کاربری</string>
+    <string name="password">رمزعبور</string>
+    <string name="phone">شماره همراه</string>
+    <string name="email">ایمیل</string>
+    <string name="license">کد مربی گری</string>
 </resources>
