@@ -4,9 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 
-import android.content.Context
-import dev.hava.fithub.auth.Auth
-import dev.hava.fithub.auth.DefaultCallback
+import dev.hava.fithub.api.Auth
+import dev.hava.fithub.api.DefaultCallback
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {

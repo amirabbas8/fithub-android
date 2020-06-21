@@ -1,11 +1,8 @@
-package dev.hava.fithub.auth
+package dev.hava.fithub.api
 
 import android.content.Context
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import dev.hava.fithub.MainActivity
-import dev.hava.fithub.startActivityTop
-import java.util.*
 
 class Auth(
     @SerializedName("status")
@@ -38,7 +35,7 @@ class Auth(
             licenseNumber: String,
             defaultCallback: DefaultCallback<Auth>
         ) {
-            val service = RetrofitInstance.instance().create(Service::class.java)
+            val service = Instance.instance()
             service.signUp(Service.SignUp(username, password, email, phone, licenseNumber))
                 .enqueue(defaultCallback)
         }
@@ -48,7 +45,7 @@ class Auth(
             password: String,
             defaultCallback: DefaultCallback<Auth>
         ) {
-            val service = RetrofitInstance.instance().create(Service::class.java)
+            val service = Instance.instance()
             service.login(Service.Login(username, password))
                 .enqueue(defaultCallback)
         }

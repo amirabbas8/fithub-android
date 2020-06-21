@@ -1,15 +1,13 @@
-package dev.hava.fithub.auth
+package dev.hava.fithub.api
 
 import android.content.Context
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Response
 
 class DefaultCallback<T>(
     private val context: Context,
-    val callback: ((Response<T>) -> Unit)? = null,
-    val failCallback: (() -> Unit)? = null
+    private val callback: ((Response<T>) -> Unit)? = null,
+    private val failCallback: (() -> Unit)? = null
 ) :
     retrofit2.Callback<T> {
 

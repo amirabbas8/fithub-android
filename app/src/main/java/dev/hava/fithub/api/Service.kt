@@ -1,10 +1,8 @@
-package dev.hava.fithub.auth
+package dev.hava.fithub.api
 
 import com.google.gson.annotations.Expose
 import retrofit2.Call
 import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
 interface Service {
@@ -44,5 +42,13 @@ interface Service {
     ): Call<Auth>
 
     class History(
+        @Expose
+        val user_id: Int,
+        @Expose
+        val history_type: Int,
+        @Expose
+        val details: String,
+        @Expose
+        val value: String
     )
 }
