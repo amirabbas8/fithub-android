@@ -7,4 +7,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Spinner">
+        <item name="android:background">@drawable/material_spinner</item>
+        <item name="android:minHeight">50dp</item>
+    </style>
 </resources>

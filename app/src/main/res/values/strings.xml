@@ -9,4 +9,25 @@
     <string name="phone">شماره همراه</string>
     <string name="email">ایمیل</string>
     <string name="license">کد مربی گری</string>
+    <string name="insert">افزودن</string>
+    <string name="type">نوع فعالیت</string>
+    <string name="amount">میزان</string>
+    <string name="details">توضیحات</string>
+    <string-array name="history_types_array">
+        <item>sugar</item>
+        <item>pressure</item>
+        <item>height</item>
+        <item>weight</item>
+        <item>food</item>
+        <item>sleep</item>
+        <item>watter</item>
+        <item>coffee</item>
+        <item>tea</item>
+        <item>running</item>
+        <item>cycling</item>
+        <item>swimming</item>
+        <item>hiking</item>
+        <item>walking</item>
+        <item>dancing</item>
+    </string-array>
 </resources>
