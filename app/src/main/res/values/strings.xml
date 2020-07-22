@@ -30,4 +30,8 @@
         <item>walking</item>
         <item>dancing</item>
     </string-array>
+    <string-array name="history_date_array">
+        <item>همه</item>
+        <item>هفته گذشته</item>
+    </string-array>
 </resources>
