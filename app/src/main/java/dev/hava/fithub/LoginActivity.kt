@@ -1,18 +1,17 @@
 package dev.hava.fithub
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
-
-
+import androidx.appcompat.app.AppCompatActivity
 import dev.hava.fithub.api.Auth
 import dev.hava.fithub.api.DefaultCallback
-import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginActivity : AppCompatActivity() {
     private var isSignUp = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.fragment_login)
         change.setOnClickListener {
             isSignUp = !isSignUp
             change.setText(if (isSignUp) R.string.login else R.string.register)

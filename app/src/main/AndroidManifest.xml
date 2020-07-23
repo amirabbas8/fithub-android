@@ -20,14 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".InsertHistoryActivity" />
-        <activity android:name=".AddCourseActivity" />
-        <activity android:name=".AddPostActivity" />
-        <activity android:name=".BuyCourseActivity" />
-        <activity android:name=".CourseActivity" />
-        <activity android:name=".CourseSettingsActivity" />
-        <activity android:name=".PostActivity" />
-        <activity android:name=".StoreActivity" />
     </application>
 
 </manifest>

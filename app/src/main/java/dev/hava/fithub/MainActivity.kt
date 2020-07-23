@@ -1,9 +1,8 @@
 package dev.hava.fithub
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import dev.hava.fithub.api.Instance
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,8 +11,5 @@ class MainActivity : AppCompatActivity() {
             startActivityTop(LoginActivity::class.java)
         }
         setContentView(R.layout.activity_main)
-        insertHistory.setOnClickListener {
-            startActivity(InsertHistoryActivity::class.java)
-        }
     }
 }
