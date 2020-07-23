@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import dev.hava.fithub.api.DefaultCallback
 import dev.hava.fithub.api.Instance
 import kotlinx.android.synthetic.main.fragment_insert_history.view.*
@@ -25,8 +26,7 @@ class InsertHistoryFragment : Fragment() {
                 view.value.text.toString(),
                 DefaultCallback(requireContext(), {
                     toast("با موفقیت انجام شد.")
-//                    findNavController().
-//                    finish()
+                    findNavController().popBackStack()
                 }, {
                     toast("خطایی رخ داد.")
                 })
