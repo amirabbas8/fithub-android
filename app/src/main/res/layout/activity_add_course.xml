@@ -8,15 +8,27 @@
 
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/post"
+        android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:hint="متن"
-        android:layout_margin="32dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:hint="نام کلاس"
         android:selectAllOnFocus="true"
-        app:layout_constraintBottom_toTopOf="@+id/ok"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:hint="قیمت"
+        android:inputType="number"
+        android:selectAllOnFocus="true"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <Button
         android:id="@+id/ok"

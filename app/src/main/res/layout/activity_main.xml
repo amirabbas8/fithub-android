@@ -42,16 +42,32 @@
         android:id="@+id/history"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/store"
         app:layout_constraintTop_toBottomOf="@id/date"
         tools:listitem="@layout/item_history" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/insert_history"
+        android:id="@+id/insertHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
         android:src="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toTopOf="@id/myCourses"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="store"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/myCourses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="my_courses"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

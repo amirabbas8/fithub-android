@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
             startActivityTop(LoginActivity::class.java)
         }
         setContentView(R.layout.activity_main)
-        insert_history.setOnClickListener {
+        insertHistory.setOnClickListener {
             startActivity(InsertHistoryActivity::class.java)
         }
     }
