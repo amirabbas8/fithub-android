@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/mainFragment">
-
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="dev.hava.fithub.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true" />
+        />
+    </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="dev.hava.fithub.MainFragment"
@@ -16,6 +28,9 @@
         <action
             android:id="@+id/action_mainFragment_to_insertHistoryFragment"
             app:destination="@id/insertHistoryFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
@@ -23,6 +38,10 @@
         android:name="dev.hava.fithub.StoreFragment"
         android:label="fragment_store"
         tools:layout="@layout/fragment_store">
+        <argument
+            android:name="isStore"
+            android:defaultValue="true"
+            app:argType="boolean" />
         <action
             android:id="@+id/action_storeFragment_to_addCourseFragment"
             app:destination="@id/addCourseFragment" />
@@ -79,4 +98,5 @@
             android:id="@+id/action_courseSettingsFragment_to_addPostFragment"
             app:destination="@id/addPostFragment" />
     </fragment>
+
 </navigation>
