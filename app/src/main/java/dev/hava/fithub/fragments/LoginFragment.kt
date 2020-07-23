@@ -1,4 +1,4 @@
-package dev.hava.fithub
+package dev.hava.fithub.fragments
 
 
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import dev.hava.fithub.*
 import dev.hava.fithub.api.Auth
 import dev.hava.fithub.api.DefaultCallback
 import kotlinx.android.synthetic.main.fragment_login.*
@@ -51,7 +52,8 @@ class LoginFragment : Fragment() {
         defaultCallback = DefaultCallback(requireContext(), {
             if (it.isSuccessful) {
                 it.body()?.save(requireContext())
-                val action = LoginFragmentDirections.actionLoginFragmentToMainFragment()
+                val action =
+                    LoginFragmentDirections.actionLoginFragmentToMainFragment()
                 findNavController().navigate(action)
             }
         }, {

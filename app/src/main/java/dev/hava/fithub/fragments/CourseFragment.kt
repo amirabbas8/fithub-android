@@ -1,4 +1,4 @@
-package dev.hava.fithub
+package dev.hava.fithub.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import dev.hava.fithub.R
 import kotlinx.android.synthetic.main.fragment_course.view.*
 
 class CourseFragment : Fragment() {
@@ -16,7 +17,8 @@ class CourseFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_course, container, false)
         view.settings.setOnClickListener {
-            val action = CourseFragmentDirections.actionCourseFragmentToCourseSettingsFragment()
+            val action =
+                CourseFragmentDirections.actionCourseFragmentToCourseSettingsFragment()
             findNavController().navigate(action)
         }
         return view

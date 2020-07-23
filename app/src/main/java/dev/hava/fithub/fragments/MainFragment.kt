@@ -1,4 +1,4 @@
-package dev.hava.fithub
+package dev.hava.fithub.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import dev.hava.fithub.R
 import dev.hava.fithub.api.Instance
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
@@ -13,7 +14,8 @@ class MainFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Instance.getUserId(requireContext()) ?: 0 == 0) {
-            val action = MainFragmentDirections.actionMainFragmentToLoginFragment()
+            val action =
+                MainFragmentDirections.actionMainFragmentToLoginFragment()
             findNavController().navigate(action)
         }
     }
@@ -25,15 +27,22 @@ class MainFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
 
         view.insertHistory.setOnClickListener {
-            val action = MainFragmentDirections.actionMainFragmentToInsertHistoryFragment()
+            val action =
+                MainFragmentDirections.actionMainFragmentToInsertHistoryFragment()
             findNavController().navigate(action)
         }
         view.myCourses.setOnClickListener {
-            val action = MainFragmentDirections.actionMainFragmentToStoreFragment(false)
+            val action =
+                MainFragmentDirections.actionMainFragmentToStoreFragment(
+                    false
+                )
             findNavController().navigate(action)
         }
         view.store.setOnClickListener {
-            val action = MainFragmentDirections.actionMainFragmentToStoreFragment(true)
+            val action =
+                MainFragmentDirections.actionMainFragmentToStoreFragment(
+                    true
+                )
             findNavController().navigate(action)
         }
 
