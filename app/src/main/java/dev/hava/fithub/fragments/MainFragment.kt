@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import dev.hava.fithub.BaseAdapter
 import dev.hava.fithub.R
 import dev.hava.fithub.api.DefaultCallback
@@ -30,17 +31,6 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
-        view.history.adapter =
-            BaseAdapter(
-                listOf(HistoryModel(1, 1, "hi", "hi")),
-                R.layout.item_history
-            ) { model, itemView ->
-                itemView.historyType.text = model.historyType.toString()
-                itemView.historyDetail.text = model.details
-                itemView.historyValue.text = model.value
-                itemView.setOnClickListener {
-                }
-            }
         view.insertHistory.setOnClickListener {
             val action =
                 MainFragmentDirections.actionMainFragmentToInsertHistoryFragment()
@@ -60,13 +50,39 @@ class MainFragment : Fragment() {
                 )
             findNavController().navigate(action)
         }
-        view.refresh.setOnClickListener { refresh() }
+        refresh(view.history)
+        view.refresh.setOnClickListener { refresh(view.history) }
         return view
     }
 
-    fun refresh() {
+    private fun refresh(rv: RecyclerView) {
         Instance.getHistory(requireContext(), DefaultCallback(requireContext(), {
-            toast("با موفقیت انجام شد.")
+            val items = ArrayList<HistoryModel>()
+            it.body()?.histories?.let { histories ->
+                for (history in histories) {
+                    val item = history.asJsonObject
+                    val fields = item.get("fields").asJsonObject
+                    items.add(
+                        HistoryModel(
+                            item.get("pk").asInt,
+                            fields.get("history_type").asString.toInt(),
+                            fields.get("details").asString,
+                            fields.get("value").asString
+                        )
+                    )
+                }
+            }
+            rv.adapter =
+                BaseAdapter(
+                    items,
+                    R.layout.item_history
+                ) { model, itemView ->
+                    itemView.historyType.text = model.historyType.toString()
+                    itemView.historyDetail.text = model.details
+                    itemView.historyValue.text = model.value
+                    itemView.setOnClickListener {
+                    }
+                }
         }, {
             toast("خطایی رخ داد.")
         }))
