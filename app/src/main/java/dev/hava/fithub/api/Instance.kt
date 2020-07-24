@@ -26,7 +26,7 @@ object Instance {
     }
 
     fun isCoach(context: Context): Boolean {
-        return Auth.load(context)?.license_number != 0
+        return Auth.load(context)?.license_number != null && Auth.load(context)?.license_number != 0
     }
 
     fun insertHistory(

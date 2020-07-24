@@ -13,7 +13,7 @@ class Auth(
     val user_id: Int?,
     @SerializedName("license_number")
     @Expose
-    val license_number: Int = 0
+    val license_number: Int?
 ) {
     fun save(context: Context) {
         val prefs = context.getSharedPreferences("auth", Context.MODE_PRIVATE).edit()
