@@ -63,7 +63,7 @@ class StoreFragment : Fragment() {
                     itemView.coursePrice.text = model.price.toString()
                     itemView.setOnClickListener {
                         val action =
-                            if (args.isStore)
+                            if (args.isStore && !Instance.isCoach(requireContext()))
                                 StoreFragmentDirections.actionStoreFragmentToBuyCourseFragment(model)
                             else StoreFragmentDirections.actionStoreFragmentToCourseFragment(model)
 
