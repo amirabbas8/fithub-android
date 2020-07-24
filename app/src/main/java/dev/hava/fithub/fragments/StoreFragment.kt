@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import dev.hava.fithub.BaseAdapter
+import dev.hava.fithub.CourseModel
 import dev.hava.fithub.R
 import kotlinx.android.synthetic.main.fragment_store.view.*
+import kotlinx.android.synthetic.main.item_store.view.*
 
 class StoreFragment : Fragment() {
     private val args: StoreFragmentArgs by navArgs()
@@ -17,6 +20,22 @@ class StoreFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_store, container, false)
+
+        view.courses.adapter =
+            BaseAdapter(
+                listOf(CourseModel(1, "hi", 1000)),
+                R.layout.item_store
+            ) { model, itemView ->
+                itemView.courseName.text = model.name
+                itemView.coursePrice.text = model.price.toString()
+                itemView.setOnClickListener {
+                    val action =
+                        if (true) StoreFragmentDirections.actionStoreFragmentToCourseFragment()
+                        else StoreFragmentDirections.actionStoreFragmentToBuyCourseFragment()
+                    findNavController().navigate(action)
+                }
+            }
+
         view.addCourse.visibility = if (args.isStore) View.VISIBLE else View.GONE
         view.addCourse.setOnClickListener {
             val action =

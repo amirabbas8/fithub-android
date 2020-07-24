@@ -36,7 +36,7 @@ class Auth(
             defaultCallback: DefaultCallback<Auth>
         ) {
             val service = Instance.instance()
-            service.signUp(Service.SignUp(username, password, email, phone, licenseNumber))
+            service.signUp(SignUp(username, password, email, phone, licenseNumber))
                 .enqueue(defaultCallback)
         }
 
@@ -46,7 +46,7 @@ class Auth(
             defaultCallback: DefaultCallback<Auth>
         ) {
             val service = Instance.instance()
-            service.login(Service.Login(username, password))
+            service.login(Login(username, password))
                 .enqueue(defaultCallback)
         }
     }
