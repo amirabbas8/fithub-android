@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import dev.hava.fithub.BaseAdapter
 import dev.hava.fithub.PostModel
 import dev.hava.fithub.R
@@ -15,6 +16,7 @@ import java.util.*
 
 class CourseFragment : Fragment() {
 
+    private val args: CourseFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,13 +30,13 @@ class CourseFragment : Fragment() {
                 itemView.text.text = model.text
                 itemView.setOnClickListener {
                     val action =
-                        CourseFragmentDirections.actionCourseFragmentToPostFragment()
+                        CourseFragmentDirections.actionCourseFragmentToPostFragment(model)
                     findNavController().navigate(action)
                 }
             }
         view.settings.setOnClickListener {
             val action =
-                CourseFragmentDirections.actionCourseFragmentToCourseSettingsFragment()
+                CourseFragmentDirections.actionCourseFragmentToCourseSettingsFragment(args.course)
             findNavController().navigate(action)
         }
         return view

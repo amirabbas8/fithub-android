@@ -30,8 +30,8 @@ class StoreFragment : Fragment() {
                 itemView.coursePrice.text = model.price.toString()
                 itemView.setOnClickListener {
                     val action =
-                        if (true) StoreFragmentDirections.actionStoreFragmentToCourseFragment()
-                        else StoreFragmentDirections.actionStoreFragmentToBuyCourseFragment()
+                        if (true) StoreFragmentDirections.actionStoreFragmentToCourseFragment(model)
+                        else StoreFragmentDirections.actionStoreFragmentToBuyCourseFragment(model)
                     findNavController().navigate(action)
                 }
             }
