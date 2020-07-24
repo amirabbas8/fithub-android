@@ -81,6 +81,11 @@
             android:defaultValue="@null"
             app:argType="dev.hava.fithub.models.PostModel"
             app:nullable="true" />
+        <argument
+            android:name="course"
+            android:defaultValue="@null"
+            app:argType="dev.hava.fithub.models.CourseModel"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/addCourseFragment"

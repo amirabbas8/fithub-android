@@ -40,12 +40,12 @@ interface Service {
         @Body leave: Leave
     ): Call<Status>
 
-    @POST("Post")
+    @POST("add_post")
     fun addPost(
         @Body post: Post
     ): Call<PostRes>
 
-    @POST("editPost")
+    @POST("edit_post")
     fun editPost(
         @Body history: PostEdit
     ): Call<PostRes>

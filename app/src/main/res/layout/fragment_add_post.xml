@@ -8,7 +8,7 @@
 
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/post"
+        android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:hint="متن"
