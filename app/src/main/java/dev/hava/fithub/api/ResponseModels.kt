@@ -1,5 +1,6 @@
 package dev.hava.fithub.api
 
+import com.google.gson.JsonArray
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -24,7 +25,7 @@ class HistoriesRes(
     val status: String,
     @SerializedName("histories")
     @Expose
-    val histories: Int?
+    val histories: JsonArray?
 )
 
 class CourseRes(
@@ -54,11 +55,20 @@ class PostRes(
     val post_id: Int?
 )
 
+class PostsRes(
+    @SerializedName("status")
+    @Expose
+    val status: String,
+    @SerializedName("posts")
+    @Expose
+    val posts: JsonArray?
+)
+
 class CoursesRes(
     @SerializedName("status")
     @Expose
     val status: String,
     @SerializedName("courses")
     @Expose
-    val courses: Int?
+    val courses: JsonArray?
 )

@@ -87,3 +87,7 @@ class PostDelete(
 )
 
 
+class Posts(
+    @Expose
+    val course_id: Int
+)

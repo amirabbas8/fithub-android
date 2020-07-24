@@ -55,6 +55,11 @@ interface Service {
         @Body history: PostDelete
     ): Call<Status>
 
+    @POST("get_course_posts")
+    fun getPosts(
+        @Body posts: Posts
+    ): Call<PostsRes>
+
     @POST("get_courses")
     fun getCourses(
     ): Call<CoursesRes>

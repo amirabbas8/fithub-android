@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import dev.hava.fithub.BaseAdapter
-import dev.hava.fithub.models.HistoryModel
 import dev.hava.fithub.R
+import dev.hava.fithub.api.DefaultCallback
 import dev.hava.fithub.api.Instance
+import dev.hava.fithub.models.HistoryModel
+import dev.hava.fithub.toast
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.item_history.view.*
 
@@ -58,7 +60,15 @@ class MainFragment : Fragment() {
                 )
             findNavController().navigate(action)
         }
-
+        view.refresh.setOnClickListener { refresh() }
         return view
+    }
+
+    fun refresh() {
+        Instance.getHistory(requireContext(), DefaultCallback(requireContext(), {
+            toast("با موفقیت انجام شد.")
+        }, {
+            toast("خطایی رخ داد.")
+        }))
     }
 }

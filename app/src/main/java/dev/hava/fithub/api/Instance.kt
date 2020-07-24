@@ -31,12 +31,18 @@ object Instance {
         details: String,
         value: String,
         defaultCallback: DefaultCallback<HistoryRes>
-    ) {
-        getUserId(context)?.let {
-            instance().insertHistory(History(it, type, details, value))
-                .enqueue(defaultCallback)
-        }
+    ) = getUserId(context)?.let {
+        instance().insertHistory(History(it, type, details, value))
+            .enqueue(defaultCallback)
     }
+
+    fun getHistory(
+        context: Context,
+        defaultCallback: DefaultCallback<HistoriesRes>
+    ) = getUserId(context)?.let {
+        instance().getHistory(User(it)).enqueue(defaultCallback)
+    }
+
 
     fun addCourse(
         context: Context,
@@ -44,31 +50,28 @@ object Instance {
         price: Int,
         value: String,
         defaultCallback: DefaultCallback<CourseRes>
-    ) {
-        getUserId(context)?.let {
-            instance().addCourse(Course(it, name, price, value)).enqueue(defaultCallback)
-        }
+    ) = getUserId(context)?.let {
+        instance().addCourse(Course(it, name, price, value)).enqueue(defaultCallback)
     }
+
 
     fun enrollCourse(
         context: Context,
         courseId: Int,
         defaultCallback: DefaultCallback<EnrollmentRes>
-    ) {
-        getUserId(context)?.let {
-            instance().enrollCourse(Enrollment(it, courseId)).enqueue(defaultCallback)
-        }
+    ) = getUserId(context)?.let {
+        instance().enrollCourse(Enrollment(it, courseId)).enqueue(defaultCallback)
     }
+
 
     fun leftCourse(
         context: Context,
         courseStudentId: Int,
         defaultCallback: DefaultCallback<Status>
-    ) {
-        getUserId(context)?.let {
-            instance().leftCourse(Leave(courseStudentId)).enqueue(defaultCallback)
-        }
+    ) = getUserId(context)?.let {
+        instance().leftCourse(Leave(courseStudentId)).enqueue(defaultCallback)
     }
+
 
     fun addPost(
         context: Context,
@@ -76,21 +79,19 @@ object Instance {
         text: String,
         order: Int,
         defaultCallback: DefaultCallback<PostRes>
-    ) {
-        getUserId(context)?.let {
-            instance().addPost(Post(courseId, text, order)).enqueue(defaultCallback)
-        }
+    ) = getUserId(context)?.let {
+        instance().addPost(Post(courseId, text, order)).enqueue(defaultCallback)
     }
+
 
     fun deletePost(
         context: Context,
         postId: Int,
         defaultCallback: DefaultCallback<Status>
-    ) {
-        getUserId(context)?.let {
-            instance().deletePost(PostDelete(postId)).enqueue(defaultCallback)
-        }
+    ) = getUserId(context)?.let {
+        instance().deletePost(PostDelete(postId)).enqueue(defaultCallback)
     }
+
 
     fun editPost(
         context: Context,
@@ -98,22 +99,23 @@ object Instance {
         text: String,
         order: Int,
         defaultCallback: DefaultCallback<PostRes>
-    ) {
-        getUserId(context)?.let {
-            instance().editPost(PostEdit(postId, text, order)).enqueue(defaultCallback)
-        }
+    ) = getUserId(context)?.let {
+        instance().editPost(PostEdit(postId, text, order)).enqueue(defaultCallback)
     }
 
-    fun getCourses(context: Context, defaultCallback: DefaultCallback<CoursesRes>) {
+    fun getPosts(context: Context, courseId: Int, defaultCallback: DefaultCallback<PostsRes>) =
+        getUserId(context)?.let {
+            instance().getPosts(Posts(courseId)).enqueue(defaultCallback)
+        }
+
+    fun getCourses(context: Context, defaultCallback: DefaultCallback<CoursesRes>) =
         getUserId(context)?.let {
             instance().getCourses().enqueue(defaultCallback)
         }
-    }
 
-    fun getMyCourses(context: Context, defaultCallback: DefaultCallback<CoursesRes>) {
+    fun getMyCourses(context: Context, defaultCallback: DefaultCallback<CoursesRes>) =
         getUserId(context)?.let {
             instance().getMyCourses(User(it)).enqueue(defaultCallback)
         }
-    }
 
 }
