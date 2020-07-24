@@ -6,11 +6,13 @@ import android.os.Parcelable
 class CourseModel(
     val courseId: Int,
     val name: String,
-    val price: Int
+    val price: Int,
+    val courseStudentId: Int
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString() ?: "",
+        parcel.readInt(),
         parcel.readInt()
     ) {
     }
@@ -19,6 +21,7 @@ class CourseModel(
         parcel.writeInt(courseId)
         parcel.writeString(name)
         parcel.writeInt(price)
+        parcel.writeInt(courseStudentId)
     }
 
     override fun describeContents(): Int {

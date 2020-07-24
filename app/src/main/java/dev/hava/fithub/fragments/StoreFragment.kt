@@ -44,12 +44,12 @@ class StoreFragment : Fragment() {
             it.body()?.courses?.let { courses ->
                 for (course in courses) {
                     val item = course.asJsonObject
-                    val fields = item.get("fields").asJsonObject
                     items.add(
                         CourseModel(
-                            item.get("pk").asInt,
-                            fields.get("name").asString,
-                            fields.get("price").asInt
+                            item.get("course_id").asInt,
+                            item.get("name").asString,
+                            item.get("price").asInt,
+                            item.get("course_student_id")?.asInt ?: 0
                         )
                     )
                 }
