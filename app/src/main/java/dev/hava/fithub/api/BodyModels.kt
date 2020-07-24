@@ -44,9 +44,7 @@ class Course(
     @Expose
     val name: String,
     @Expose
-    val price: Int,
-    @Expose
-    val value: String
+    val price: Int
 )
 
 

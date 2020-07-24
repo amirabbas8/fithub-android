@@ -52,10 +52,9 @@ object Instance {
         context: Context,
         name: String,
         price: Int,
-        value: String,
         defaultCallback: DefaultCallback<CourseRes>
     ) = getUserId(context)?.let {
-        instance().addCourse(Course(it, name, price, value)).enqueue(defaultCallback)
+        instance().addCourse(Course(it, name, price)).enqueue(defaultCallback)
     }
 
 
