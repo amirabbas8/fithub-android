@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import dev.hava.fithub.BaseAdapter
-import dev.hava.fithub.HistoryModel
+import dev.hava.fithub.models.HistoryModel
 import dev.hava.fithub.R
 import dev.hava.fithub.api.Instance
 import kotlinx.android.synthetic.main.fragment_main.view.*

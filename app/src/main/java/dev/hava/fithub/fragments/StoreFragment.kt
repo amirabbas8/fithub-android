@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import dev.hava.fithub.BaseAdapter
-import dev.hava.fithub.CourseModel
 import dev.hava.fithub.R
+import dev.hava.fithub.models.CourseModel
 import kotlinx.android.synthetic.main.fragment_store.view.*
 import kotlinx.android.synthetic.main.item_store.view.*
 

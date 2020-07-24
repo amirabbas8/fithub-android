@@ -58,7 +58,7 @@
         tools:layout="@layout/item_post">
         <argument
             android:name="post"
-            app:argType="dev.hava.fithub.PostModel" />
+            app:argType="dev.hava.fithub.models.PostModel" />
     </fragment>
     <fragment
         android:id="@+id/insertHistoryFragment"
@@ -68,7 +68,7 @@
         <argument
             android:name="history"
             android:defaultValue="@null"
-            app:argType="dev.hava.fithub.HistoryModel"
+            app:argType="dev.hava.fithub.models.HistoryModel"
             app:nullable="true" />
     </fragment>
     <fragment
@@ -79,7 +79,7 @@
         <argument
             android:name="post"
             android:defaultValue="@null"
-            app:argType="dev.hava.fithub.PostModel"
+            app:argType="dev.hava.fithub.models.PostModel"
             app:nullable="true" />
     </fragment>
     <fragment
@@ -90,7 +90,7 @@
         <argument
             android:name="course"
             android:defaultValue="@null"
-            app:argType="dev.hava.fithub.CourseModel"
+            app:argType="dev.hava.fithub.models.CourseModel"
             app:nullable="true" />
     </fragment>
     <fragment
@@ -100,7 +100,7 @@
         tools:layout="@layout/fragment_course">
         <argument
             android:name="course"
-            app:argType="dev.hava.fithub.CourseModel" />
+            app:argType="dev.hava.fithub.models.CourseModel" />
         <action
             android:id="@+id/action_courseFragment_to_courseSettingsFragment"
             app:destination="@id/courseSettingsFragment" />
@@ -115,7 +115,7 @@
         tools:layout="@layout/fragment_buy_course">
         <argument
             android:name="course"
-            app:argType="dev.hava.fithub.CourseModel" />
+            app:argType="dev.hava.fithub.models.CourseModel" />
     </fragment>
     <fragment
         android:id="@+id/courseSettingsFragment"
@@ -124,7 +124,7 @@
         tools:layout="@layout/fragment_course_settings">
         <argument
             android:name="course"
-            app:argType="dev.hava.fithub.CourseModel" />
+            app:argType="dev.hava.fithub.models.CourseModel" />
         <action
             android:id="@+id/action_courseSettingsFragment_to_addPostFragment"
             app:destination="@id/addPostFragment" />
