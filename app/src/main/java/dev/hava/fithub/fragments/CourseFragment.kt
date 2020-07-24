@@ -26,6 +26,7 @@ class CourseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_course, container, false)
+        view.refresh.setOnClickListener { refresh(view.posts) }
         refresh(view.posts)
         view.settings.setOnClickListener {
             val action =
