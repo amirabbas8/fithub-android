@@ -51,6 +51,7 @@ class StoreFragment : Fragment() {
                         CourseModel(
                             item.get("course_id").asInt,
                             item.get("name").asString,
+                            item.get("couch").asString,
                             item.get("price").asInt,
                             item.get("course_student_id")?.asInt ?: 0
                         )
@@ -63,6 +64,7 @@ class StoreFragment : Fragment() {
                     R.layout.item_store
                 ) { model, itemView ->
                     itemView.courseName.text = model.name
+                    itemView.courseCoach.text = model.couch
                     itemView.coursePrice.text = model.price.toString()
                     itemView.setOnClickListener {
                         val action =

@@ -6,11 +6,13 @@ import android.os.Parcelable
 class CourseModel(
     val courseId: Int,
     val name: String,
+    val couch: String,
     val price: Int,
     val courseStudentId: Int
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
+        parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readInt(),
         parcel.readInt()
