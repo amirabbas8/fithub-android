@@ -11,7 +11,7 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:hint="متن"
+        android:hint="یک متن آموزشی بنویسید"
         android:layout_margin="32dp"
         android:selectAllOnFocus="true"
         app:layout_constraintBottom_toTopOf="@+id/ok"
