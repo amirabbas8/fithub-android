@@ -72,7 +72,7 @@ class CourseFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.refresh_menu, menu)
+        inflater.inflate(R.menu.course_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
