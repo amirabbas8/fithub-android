@@ -1,9 +1,7 @@
 package dev.hava.fithub.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -14,6 +12,7 @@ import dev.hava.fithub.api.DefaultCallback
 import dev.hava.fithub.api.Instance
 import dev.hava.fithub.models.PostModel
 import dev.hava.fithub.toast
+import kotlinx.android.synthetic.main.fragment_course.*
 import kotlinx.android.synthetic.main.fragment_course.view.*
 import kotlinx.android.synthetic.main.item_post.view.*
 import java.util.*
@@ -21,12 +20,16 @@ import java.util.*
 class CourseFragment : Fragment() {
 
     private val args: CourseFragmentArgs by navArgs()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_course, container, false)
-        view.refresh.setOnClickListener { refresh(view.posts) }
         refresh(view.posts)
         view.settings.setOnClickListener {
             val action =
@@ -71,5 +74,20 @@ class CourseFragment : Fragment() {
                 toast("خطایی رخ داد.")
             })
         )
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.refresh_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.refresh -> {
+                refresh(posts)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
