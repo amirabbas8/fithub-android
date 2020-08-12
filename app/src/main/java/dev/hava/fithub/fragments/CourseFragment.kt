@@ -31,11 +31,6 @@ class CourseFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_course, container, false)
         refresh(view.posts)
-        view.settings.setOnClickListener {
-            val action =
-                CourseFragmentDirections.actionCourseFragmentToCourseSettingsFragment(args.course)
-            findNavController().navigate(action)
-        }
         return view
     }
 
@@ -85,6 +80,12 @@ class CourseFragment : Fragment() {
         return when (item.itemId) {
             R.id.refresh -> {
                 refresh(posts)
+                true
+            }
+            R.id.settings -> {
+                val action =
+                    CourseFragmentDirections.actionCourseFragmentToCourseSettingsFragment(args.course)
+                findNavController().navigate(action)
                 true
             }
             else -> super.onOptionsItemSelected(item)
