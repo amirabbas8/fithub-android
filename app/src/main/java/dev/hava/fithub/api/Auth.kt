@@ -54,5 +54,12 @@ class Auth(
             service.login(Login(username, password))
                 .enqueue(defaultCallback)
         }
+
+        fun logout(context: Context) {
+            val prefs = context.getSharedPreferences("auth", Context.MODE_PRIVATE).edit()
+            prefs.putInt("user_id", 0)
+            prefs.putInt("license_number", 0)
+            prefs.apply()
+        }
     }
 }

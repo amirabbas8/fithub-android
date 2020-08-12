@@ -7,6 +7,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import dev.hava.fithub.BaseAdapter
 import dev.hava.fithub.R
+import dev.hava.fithub.api.Auth
 import dev.hava.fithub.api.DefaultCallback
 import dev.hava.fithub.api.Instance
 import dev.hava.fithub.models.HistoryModel
@@ -152,6 +153,10 @@ class MainFragment : Fragment() {
                 true
             }
             R.id.logout -> {
+                Auth.logout(requireContext())
+                val action =
+                    MainFragmentDirections.actionMainFragmentToLoginFragment()
+                findNavController().navigate(action)
                 true
             }
             else -> super.onOptionsItemSelected(item)
