@@ -14,21 +14,21 @@
     <string name="amount">میزان</string>
     <string name="details">توضیحات</string>
     <string-array name="history_types_array">
-        <item>sugar</item>
-        <item>pressure</item>
-        <item>height</item>
-        <item>weight</item>
-        <item>food</item>
-        <item>sleep</item>
-        <item>watter</item>
-        <item>coffee</item>
-        <item>tea</item>
-        <item>running</item>
-        <item>cycling</item>
-        <item>swimming</item>
-        <item>hiking</item>
-        <item>walking</item>
-        <item>dancing</item>
+        <item>شکر</item>
+        <item>فشار خون</item>
+        <item>قد</item>
+        <item>وزن</item>
+        <item>غذا</item>
+        <item>خواب</item>
+        <item>آب</item>
+        <item>قهوه</item>
+        <item>چایی</item>
+        <item>دویدن</item>
+        <item>دوچرخه سواری</item>
+        <item>شنا</item>
+        <item>کوه‌نوردی</item>
+        <item>پیاده‌روی</item>
+        <item>رقص</item>
     </string-array>
     <string-array name="history_date_array">
         <item>همه</item>

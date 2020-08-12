@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/refresh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="100dp"
-        android:text="بروزرسانی"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/type"
@@ -20,11 +13,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
         android:entries="@array/history_types_array"
         android:text="refresh"
         app:layout_constraintEnd_toStartOf="@id/date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/refresh" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/date"
@@ -32,11 +26,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
         android:entries="@array/history_date_array"
         android:text="refresh"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/type"
-        app:layout_constraintTop_toBottomOf="@id/refresh" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/history"
@@ -71,6 +66,6 @@
         android:layout_height="wrap_content"
         android:text="درس های من"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/store"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/store" />
 </androidx.constraintlayout.widget.ConstraintLayout>
