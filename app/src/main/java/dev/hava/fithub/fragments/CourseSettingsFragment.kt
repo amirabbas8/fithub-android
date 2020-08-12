@@ -21,6 +21,7 @@ class CourseSettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_course_settings, container, false)
+        view.courseName.text = args.course.name
         view.addPost.setOnClickListener {
             val action =
                 CourseSettingsFragmentDirections.actionCourseSettingsFragmentToAddPostFragment(
