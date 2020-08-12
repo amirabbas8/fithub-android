@@ -13,6 +13,7 @@ import dev.hava.fithub.api.Instance
 import dev.hava.fithub.toast
 import kotlinx.android.synthetic.main.fragment_add_post.view.*
 import java.util.*
+import kotlin.math.abs
 
 class AddPostFragment : Fragment() {
 
@@ -30,7 +31,7 @@ class AddPostFragment : Fragment() {
                     requireContext(),
                     courseId,
                     view.text.text.toString(),
-                    Date().time.toInt(),
+                    abs(Date().time.toInt()),
                     DefaultCallback(requireContext(), {
                         toast("با موفقیت انجام شد.")
                         findNavController().popBackStack()
